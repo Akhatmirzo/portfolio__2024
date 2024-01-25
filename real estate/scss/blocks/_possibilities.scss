@@ -1,0 +1,125 @@
+.possibilities {
+    margin-top: 160px;
+
+    &>.container {
+        max-width: 1920px;
+        padding-inline: 100px 0;
+
+        @include media(0px, 1440px) {
+            padding-inline: 0;
+        }
+    }
+}
+
+.possibilities__image-content {
+    position: relative;
+    max-width: 1820px;
+    height: 616px;
+    background-image: url('../assets/images/possibilities__image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center left;
+}
+
+.possibilities__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    @include mobile() {
+        flex-direction: column-reverse;
+    }
+}
+
+.possibilities__content-text {
+
+    @include media(0px, 1440px) {
+        padding-left: 20px;
+    }
+
+    @include mobile() {
+        padding-left: 10px;
+    }
+}
+
+.possibilities__content-text>.content__paragraph {
+    max-width: 791px;
+
+    ul>li {
+        color: $darkBlue;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 150%;
+
+        @include tablet() {
+            font-size: 14px;
+            text-align: justify;
+        }
+    }
+}
+
+.possibilities__content-image {
+    width: 680px;
+    height: 699px;
+
+    object-fit: cover;
+    object-position: center;
+
+    @include media(0px, 1440px) {
+        width: 550px;
+    }
+
+    @include tablet() {
+        width: 450px;
+        height: 650px;
+    }
+
+    @include mobile() {
+        width: 100%;
+        height: 350px;
+        align-self: flex-end;
+    }
+}
+
+// * technical__content
+.technical__content .container {
+    padding-inline: 0;
+}
+
+.technical__content .possibilities__content {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+
+    @include mobile() {
+        flex-direction: column-reverse;
+    }
+}
+
+.technical__content .possibilities__content-text {
+    min-width: 680px;
+    margin-bottom: 50px;
+
+    @include media(0px, 1440px) {
+        min-width: 550px;
+    }
+
+    @include tablet() {
+        min-width: 450px;
+    }
+
+    @include mobile() {
+        min-width: 100%;
+        align-self: flex-end;
+    }
+}
+
+.technical__content .possibilities__content-image {
+    width: 1120px;
+    height: 665px;
+
+    @include mobile() {
+        min-width: 100%;
+        height: 500px;
+    }
+}

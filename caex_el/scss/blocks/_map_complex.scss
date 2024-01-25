@@ -1,0 +1,254 @@
+.map_complex {
+    position: relative;
+    padding-block: 160px;
+    background-color: $white;
+
+    .container {
+        max-width: 1960px;
+        padding-inline: 20px;
+    }
+
+    @include mobile() {
+        padding-block: 80px;
+    }
+}
+
+.map_complex-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 60px;
+
+    @include media(0px, 1170px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.map_complex-control {
+    width: 35%;
+
+    @include media(0px, 1170px) {
+        width: 100%;
+    }
+}
+
+.map_complex-control>h2 {
+    max-width: 417px;
+    color: $orange;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 30px;
+
+    span {
+        font-family: Apoc Normal;
+        font-style: italic;
+    }
+
+    @include mobile() {
+        font-size: 28px;
+    }
+}
+
+.map_complex-control-list {
+    width: 100%;
+}
+
+.map_complex-control-list-item:first-child {
+    border-top: 1px solid rgba($color: $darkBlue, $alpha: 0.3);
+}
+
+.map_complex-control-list-item {
+    cursor: pointer;
+    padding-block: 20px;
+    border-bottom: 1px solid rgba($color: $darkBlue, $alpha: 0.3);
+
+    @include mobile() {
+        padding-block: 10px;
+    }
+}
+
+.map_complex-control-list-item h3 {
+    color: $darkBlue;
+    font-family: Apoc Normal;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 400;
+
+    @include mobile() {
+        font-size: 28px;
+    }
+}
+
+.map_complex-control-list-item p {
+    color: $darkBlue;
+    font-size: 16px;
+    font-weight: 400;
+
+    @include mobile() {
+        font-size: 12px;
+    }
+}
+
+.map_complex-active h3 {
+    color: $orange;
+}
+
+// Map complex image
+
+.map_complex-images {
+    position: relative;
+    width: 870px;
+    height: 700px;
+    flex-shrink: 0;
+    overflow: hidden;
+
+    border-radius: 40px;
+    border: 1px solid $darkBlue;
+
+    @include media(0px, 1380px) {
+        width: 700px;
+        height: 560px;
+    }
+
+    @include media(0px, 1170px) {
+        width: 100%;
+    }
+
+    @include mobile() {
+        height: 350px;
+        border-radius: 30px;
+    }
+
+    @include media(0px, 500px) {
+        height: 250px;
+        border-radius: 20px;
+    }
+}
+
+.map_complex-images img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    -o-object-fit: cover;
+    object-fit: cover;
+    transform: scale(var(--zoom, 1));
+    transform-origin: var(--x) var(--y);
+    transition: all 0.3s linear;
+
+    &:hover {
+        --zoom: 3;
+        /* zoom value*/
+    }
+}
+
+
+// Map complex controll buttons
+
+.complex_map-control {
+    width: 200px;
+    border-radius: 15px;
+    border: 1px solid $darkBlue;
+    background: $white;
+    padding: 23px;
+
+    // flex
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    // absolute position
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include mobile() {
+        width: 120px;
+        padding: 10px;
+        border-radius: 10px;
+        bottom: 20px;
+    }
+}
+
+// Map image fullscreen
+.map_complex-image-fullscreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $darkBlue, $alpha: 0.5);
+}
+
+.map-fullscreen {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-fullscreen > .map_complex-images {
+    width: 80%;
+    height: 80%;
+    border-radius: 15px;
+    border: 0;
+
+    transform: translateY(150px);
+    opacity: 0;
+
+    @include media(0px, 1170px) {
+        width: 100%;
+    }
+
+    @include mobile() {
+        height: 350px;
+    }
+
+    @include media(0px, 500px) {
+        height: 250px;
+    }
+}
+
+.close-fullscreen {
+    position: absolute; 
+    top: 50px;
+    right: 50px;
+
+    @include mobile() {
+        & svg {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    @include media(0px, 500px) {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+.fullscreen-active {
+    display: block;
+}
+
+.fullscreen-active .map_complex-images {
+    animation: anim-fullscreen 0.3s ease-in forwards;
+}
+
+@keyframes anim-fullscreen {
+    0% {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

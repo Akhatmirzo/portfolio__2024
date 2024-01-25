@@ -1,0 +1,100 @@
+header {
+    padding-block: 100px;
+
+    @include media(0px, 1440px) {
+        padding-block: 50px;
+    }
+}
+
+.navbar__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo__dark img {
+    position: relative;
+    z-index: 1001;
+
+    @include media(0px, 1200px) {
+        width: 160px;
+    }
+
+    @include mobile() {
+        width: 140px;
+    }
+}
+
+.navbar__list {
+    display: flex;
+    align-items: start;
+    gap: 40px;
+
+    @include media(1201px, 1440px) {
+        align-items: center;
+    }
+
+    @include media(0px, 1200px) {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -100%;
+
+        flex-direction: column;
+        z-index: 1000;
+        gap: 25px;
+
+        background-color: #333;
+        padding-top: 150px;
+        padding-left: 20px;
+
+        transition: all 0.2s ease;
+    }
+
+    @include mobile() {
+        width: 70%;
+    }
+
+    @include media(0px, 540px) {
+        width: 100%;
+    }
+}
+
+.navbar__active {
+    left: 0;
+}
+
+.navbar__list-item :where(a, select) {
+    color: $darkBlue;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @include media(0px, 1200px) {
+        color: $white;
+    }
+}
+
+.navbar__list-item select {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#hamburgerBtn {
+    display: none;
+    background: transparent;
+    border: none;
+
+    @include media(0px, 1200px) {
+        display: block;
+    }
+}
+
+#menu_bars {
+    font-size: 40px;
+
+    position: relative;
+    z-index: 1001;
+}

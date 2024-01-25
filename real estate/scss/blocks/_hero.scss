@@ -1,0 +1,137 @@
+.hero__title {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    margin-bottom: 80px;
+
+    position: relative;
+    z-index: 10;
+
+    @include mobile() {
+        margin-bottom: 50px;
+        gap: 20px;
+    }
+}
+
+.hero__title h2 {
+    color: $orange;
+    font-size: 96px;
+    font-weight: 700;
+
+    span {
+        font-family: "Apoc Normal";
+        font-weight: 400;
+        font-style: italic;
+    }
+
+    @include media(0px, 1440px) {
+        font-size: 74px;
+    }
+
+    @include tablet() {
+        font-size: 58px;
+    }
+
+    @include mobile() {
+        font-size: 48px;
+    }
+
+    @include media(0px, 540px) {
+        font-size: 32px;
+    }
+}
+
+.hero__title p {
+    max-width: 919px;
+    color: $darkBlue;
+    font-size: 20px;
+    font-weight: 400;
+
+    @include mobile() {
+        font-size: 18px;
+    }
+
+    @include media(0px, 540px) {
+        font-size: 14px;
+    }
+}
+
+
+// Hero image styles
+.hero__image-wrapper {
+    width: 100%;
+    height: 900px;
+
+    background-image: url('../assets/images/hero__image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+
+    .container {
+        position: relative;
+        height: 100%;
+    }
+
+    @include tablet() {
+        height: 700px;
+    }
+    @include mobile() {
+        height: 500px;
+    }
+}
+
+.hero__vector-img {
+    display: flex;
+    align-items: end;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @include media(0px, 1024px) {
+        display: none;
+    }
+}
+
+.hero__vector-img img:first-child {
+    margin-right: -300px;
+
+    @include media(0px, 1600px) {
+        height: 700px;
+        margin-right: -250px;
+    }
+
+    @include media(0px, 1440px) {
+        height: 600px;
+        margin-right: -150px;
+    }
+}
+
+.hero__vector-img img:last-child {
+    @include media(0px, 1600px) {
+        height: 900px;
+    }
+
+    @include media(0px, 1440px) {
+        height: 800px;
+    }
+}
+
+// hero__image-paralax
+.hero__image-paralax {
+    position: absolute;
+    right: 0px;
+    bottom: -612px;
+
+    // style 
+    width: 64.5%;
+    height: 616px;
+    object-fit: cover;
+
+    @include media(0px, 1440px) {
+        bottom: -350px;
+
+        height: 350px;
+    }
+}

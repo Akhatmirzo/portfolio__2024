@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .loading {
+            display: none;
+        }
+
+        svg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 150px;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body class="bg-dark ">
+    <div class="container mt-5">
+        <div class="loading">
+            <svg viewBox="0 0 100 100">
+                <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6">
+                    <!-- left line -->
+                    <path d="M 21 40 V 59">
+                        <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+                            values="0 21 59; 180 21 59" dur="2s" repeatCount="indefinite" />
+                    </path>
+                    <!-- right line -->
+                    <path d="M 79 40 V 59">
+                        <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+                            values="0 79 59; -180 79 59" dur="2s" repeatCount="indefinite" />
+                    </path>
+                    <!-- top line -->
+                    <path d="M 50 21 V 40">
+                        <animate attributeName="d" values="M 50 21 V 40; M 50 59 V 40" dur="2s"
+                            repeatCount="indefinite" />
+                    </path>
+                    <!-- btm line -->
+                    <path d="M 50 60 V 79">
+                        <animate attributeName="d" values="M 50 60 V 79; M 50 98 V 79" dur="2s"
+                            repeatCount="indefinite" />
+                    </path>
+                    <!-- top box -->
+                    <path d="M 50 21 L 79 40 L 50 60 L 21 40 Z">
+                        <animate attributeName="stroke" values="rgba(255,255,255,1); rgba(100,100,100,0)" dur="2s"
+                            repeatCount="indefinite" />
+                    </path>
+                    <!-- mid box -->
+                    <path d="M 50 40 L 79 59 L 50 79 L 21 59 Z" />
+                    <!-- btm box -->
+                    <path d="M 50 59 L 79 78 L 50 98 L 21 78 Z">
+                        <animate attributeName="stroke" values="rgba(100,100,100,0); rgba(255,255,255,1)" dur="2s"
+                            repeatCount="indefinite" />
+                    </path>
+                    <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; 0 -19"
+                        dur="2s" repeatCount="indefinite" />
+                </g>
+            </svg>
+        </div>
+
+        <div id="userLists" class="d-flex gap-4 flex-wrap justify-content-center  ">
+            <!-- User render data -->
+        </div>
+    </div>
+
+
+    <!--Post Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" style="max-width: 80%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">User Posts</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="post_modal-body" class="modal-body d-flex flex-wrap gap-4 justify-content-center"
+                    style="max-height: 600px; overflow-x: hidden; overflow-y: scroll;">
+                    <!-- User render posts data -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="max-width: 80%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="commentModalBody" class="modal-body d-flex flex-wrap gap-4 justify-content-center">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

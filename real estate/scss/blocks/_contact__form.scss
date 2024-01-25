@@ -1,0 +1,102 @@
+.contact__form {
+    margin-block: 160px 270px;
+
+    .container {
+        max-width: 1920px;
+        padding-inline: 100px 0;
+
+        @include tablet() {
+            padding-inline: 60px 0;
+        }
+
+        @include mobile() {
+            padding-inline: 10px 10px;
+        }
+    }
+}
+
+.contact__form-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 140px;
+
+    @include media(0px, 1440px) {
+        flex-direction: column;
+    }
+}
+
+.contact__form-group {
+    @include media(0px, 1440px) {
+        width: 80%;
+    }
+
+    @include mobile() {
+        width: 100%;
+    }
+}
+
+.contact__form-group-btn {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+
+    margin-bottom: 45px;
+
+    @include mobile() {
+        gap: 30px;
+    }
+}
+
+.contact__form-group-btn button {
+    background-color: transparent;
+    border: none;
+
+    color: rgba($color: $darkBlue, $alpha: 0.5);
+    font-size: 32px;
+    font-weight: 700;
+
+    @include tablet() {
+        font-size: 24px;
+    }
+
+    @include mobile() {
+        font-size: 16px;
+    }
+}
+
+.form-group-active {
+    color: $orange !important;
+}
+
+.contact__form-group>form {
+    width: 105%;
+    @include formInput();
+
+    @include mobile() {
+        width: 100%;
+    }
+}
+
+.contact__form-btn {
+    @include primaryBtn();
+}
+
+.map__location {
+    width: 960px;
+    height: 702px;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    @include media(0px, 1440px) {
+        width: 100%;
+    }
+}
+
+#participants__form,
+#partners__form {
+    display: none;
+}

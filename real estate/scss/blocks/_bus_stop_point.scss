@@ -1,0 +1,168 @@
+.bus_stop_point {
+
+    .container {
+        max-width: 1920px;
+        padding: 0;
+    }
+}
+
+.bus_stop_point__wrapper {
+    display: flex;
+
+    @include mobile() {
+        flex-direction: column;
+    }
+}
+
+.bus_stop_point__list {
+    min-width: 805px;
+    background: linear-gradient(72deg, #FFE5C1 0%, #C39270 158.83%);
+    padding: 120px 120px 140px 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+
+    @include media(0px, 1440px) {
+        min-width: 0;
+        width: 100%;
+
+        padding-inline: 20px 50px;
+    }
+
+    @include tablet() {
+        padding-block: 50px;
+    }
+
+    @include mobile() {
+        padding: 50px 20px;
+    }
+}
+
+.bus_stop_point__list ul {
+    max-width: 585px;
+}
+
+.bus_stop_point__list ul li {
+    border-top: 1px solid rgba($color: $darkBlue, $alpha: 0.3);
+}
+
+.bus_stop_point__list ul li:last-child {
+    border-bottom: 1px solid rgba($color: $darkBlue, $alpha: 0.3);
+}
+
+.bus_stop_point__list ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-block: 15px;
+
+    color: $darkBlue;
+    font-family: "Apoc Normal";
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 180%;
+
+    @include tablet() {
+        font-size: 14px;
+    }
+
+    @include mobile() {
+        font-size: 12px;
+    }
+}
+
+.bus_stop_list-active {
+    color: $orange !important;
+
+    span {
+        display: block;
+        width: 15px;
+        height: 15px;
+        background-color: $orange !important;
+        border-radius: 50%;
+    }
+}
+
+.bus_stop_point__map {
+    background-color: $darkBlue;
+    width: 100%;
+
+    @include media(0px, 1440px) {
+        width: 100%;
+    }
+}
+
+.bus_stop_point__map iframe {
+    width: 100%;
+    height: 500px;
+}
+
+.bus_stop_point__map__content-text {
+    padding: 120px 100px 80px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include media(0px, 1440px) {
+        padding-inline: 50px 20px;
+    }
+
+    @include tablet() {
+        padding-block: 50px;
+    }
+
+    @include mobile() {
+        padding: 50px 20px;
+    }
+}
+
+.bus_stop_point__map__content-text h2 {
+    max-width: 580px;
+    color: $orange;
+    font-family: "Apoc Normal";
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 400;
+
+    @include media(0, 1440px) {
+        font-size: 38px;
+    }
+
+    @include tablet() {
+        font-size: 28px;
+    }
+
+    @include mobile() {
+        font-size: 22px;
+    }
+}
+
+.bus_stop_point__map__content-text hr {
+    width: 100%;
+    height: 1px;
+    background-color: $white;
+}
+
+.bus_stop_point__map__content-text p {
+    max-width: 415px;
+    height: 100%;
+    color: $white;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 150%;
+
+    margin-top: 146px;
+    align-self: flex-end;
+
+    @include tablet() {
+        font-size: 18px;
+    }
+
+    @include mobile() {
+        margin-top: 46px;
+        font-size: 16px;
+    }
+}

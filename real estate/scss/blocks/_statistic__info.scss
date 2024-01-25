@@ -1,0 +1,64 @@
+.statistic__info {
+    background-color: $darkBlue;
+    padding-block: 160px;
+
+    @include media(0px, 1440px) {
+        padding-block: 100px;
+    }
+    @include mobile() {
+        padding-block: 50px;
+    }
+}
+
+.statistic__info-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile() {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+}
+
+.statistic__info-wrapper > hr {
+    width: 1px;
+    background-color: $white;
+
+    @include mobile() {
+        height: 1px;
+        width: 50%;
+    }
+}
+
+.statistic__info-wrapper div h2 {
+    color: $orange;
+    font-family: "Apoc Normal";
+    font-size: 64px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 130%;
+
+    @include media(0px, 1440px) {
+        font-size: 54px;
+    }
+
+    @include tablet() {
+        font-size: 38px;
+    }
+
+    @include mobile() {
+        text-align: center;
+        font-size: 32px;
+    }
+}
+
+.statistic__info-wrapper div h3 {
+    color: $white;
+    font-size: 24px;
+    font-weight: 400;
+
+    @include tablet() {
+        font-size: 18px;
+    }
+}
